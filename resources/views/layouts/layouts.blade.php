@@ -17,6 +17,6 @@
   @component('components.footer')
   @endcomponent
 
-  <script src="{{ asset('css/app.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
