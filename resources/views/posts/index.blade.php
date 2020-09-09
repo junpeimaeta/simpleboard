@@ -5,8 +5,7 @@
 @section('content')
 
 <h1>Posts</h1>
-<h2>Branch Test</h2>
-<h2>Branch Test2</h2>
+<h2>Test Branch</h2>
   @foreach($posts as $post)
   <div class="card">
     <div class="card-body">
