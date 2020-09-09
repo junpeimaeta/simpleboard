@@ -5,6 +5,7 @@
 @section('content')
 
 <h1>Editing Post</h1>
+<h2>Branch Test</h2>
 
 <form action="/posts/{{ $post->id }}" method="post">
   {{ csrf_field() }}
