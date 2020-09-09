@@ -1,3 +1,9 @@
+@extends('layouts.layouts')
+
+@section('title','Simple Board')
+
+@section('content')
+
 <h1>Posts</h1>
 
 <a href="/posts/create/">New Post</a>
@@ -15,3 +21,5 @@
 
   @endforeach
 </ul>
+
+@endsection
