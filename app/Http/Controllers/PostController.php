@@ -38,7 +38,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validation
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required|max:255',
+        ]);
+
         $post = new Post();
         $post->title = $request->input('title');
         $post->content = $request->input('content');
@@ -80,7 +85,12 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        // validation
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required|max:255',
+        ]);
+
         $post->title = $request->input('title');
         $post->content = $request->input('content');
         $post->save();

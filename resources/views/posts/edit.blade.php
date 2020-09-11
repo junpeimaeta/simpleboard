@@ -5,17 +5,25 @@
 @section('content')
 
 <h1>Editing Post</h1>
-<h2>Test Branch</h2>
+@if($errors->any())
+  <div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $error)
+    <li> {{ $error }} </li>
+    @endforeach
+  </ul>
+  </div>
+@endif
 <form action="/posts/{{ $post->id }}" method="post">
   {{ csrf_field() }}
   <input type="hidden" name="_method" value="PUT">
   <div class="form-group">
     <label for="exampleInputEmail1">Title</label>
-  <input type="text" class="form-controll" area-describedby="emailHelp" name="title" value=" {{ $post->title }}">
+    <input type="text" class="form-controll" area-describedby="emailHelp" name="title" value="{{ old('title') =='' ? $post->title : old('title') }}">
   </div>
   <div class="form-group">
-  <label for="exampleInputPassword1">Content</label>
-  <input type="text" class="form-controll" name="content" value=" {{ $post->content }}">
+    <label for="exampleInputPassword1">Content</label>
+    <textarea class="form-controll" name="content">{{ old('content') =='' ? $post->content : old('content') }}</textarea>
   </div>
   <button type="submit" class="btn btn-outline-primary">Submit</button>
 </form>
